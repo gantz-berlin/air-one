@@ -1,0 +1,23 @@
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+*.auto.tfvars
+terraform.tfvars
+
+# Python
+__pycache__/
+.venv/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

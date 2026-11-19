@@ -1,0 +1,18 @@
+# All connection settings come from environment variables, so the same
+# profile works locally and inside the Fargate task (where Terraform sets them).
+# Credentials come from the standard AWS chain (ECS task role on Fargate,
+# AWS_PROFILE / SSO locally).
+air_one:
+  target: default
+  outputs:
+    default:
+      type: athena
+      region_name: "{{ env_var('AWS_REGION', 'eu-central-1') }}"
+      database: awsdatacatalog
+      schema: "{{ env_var('DBT_ATHENA_SCHEMA', 'air_one') }}"
+      work_group: "{{ env_var('DBT_ATHENA_WORKGROUP', 'primary') }}"
+      s3_staging_dir: "{{ env_var('DBT_ATHENA_S3_STAGING_DIR') }}"
+      s3_data_dir: "{{ env_var('DBT_ATHENA_S3_DATA_DIR') }}"
+      s3_data_naming: schema_table
+      threads: 1
+      num_retries: 2

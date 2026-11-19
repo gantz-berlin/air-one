@@ -1,0 +1,8 @@
+# Copy to terraform.tfvars (git-ignored) and adjust if needed.
+aws_region = "eu-central-1"
+project    = "air-one"
+
+# Use your own network instead of the default VPC:
+# vpc_id           = "vpc-0123456789abcdef0"
+# subnet_ids       = ["subnet-aaa", "subnet-bbb"]
+# assign_public_ip = false   # private subnets with NAT or VPC endpoints
