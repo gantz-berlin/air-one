@@ -1,0 +1,17 @@
+name: air_one
+version: "1.0.0"
+config-version: 2
+
+profile: air_one
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages", "logs"]
+
+models:
+  air_one:
+    +materialized: table
+    +format: parquet

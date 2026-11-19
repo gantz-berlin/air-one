@@ -1,0 +1,9 @@
+.git
+.github
+terraform
+scripts
+**/target
+**/logs
+**/dbt_packages
+**/.terraform
+*.tfstate*

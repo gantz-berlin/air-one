@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: hello_world
+    description: "Hello-world table proving that dbt can create tables in Athena from Fargate."
+    columns:
+      - name: greeting
+        description: "Always 'hello world'."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["hello world"]
+      - name: created_at
+        description: "When the dbt run created the row."
+        data_tests:
+          - not_null
